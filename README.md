@@ -1,4 +1,4 @@
-# SpringBootHoverflyBoltDB
+# SpringBoot Hoverfly BoltDB
 Implementations of Hoverfly proxy in Spring Boot using Bolt DB. <br />
 
 ## Install Hoverfly on MacOS
