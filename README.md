@@ -63,10 +63,10 @@ INFO[2018-07-18T15:24:22+05:30] serving proxy <br />
 
 ## SpringBoot changes:
 
-import org.springframework.http.client.SimpleClientHttpRequestFactory;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.Proxy.Type;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;<br />
+import java.net.InetSocketAddress;<br />
+import java.net.Proxy;<br />
+import java.net.Proxy.Type;<br />
 
 RestTemplate restTemplate = new RestTemplate();<br />
 SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();<br />
