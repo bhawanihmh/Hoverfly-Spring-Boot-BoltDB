@@ -1,16 +1,19 @@
 # SpringBootHoverflyBoltDB
-Implementations of Hoverfly proxy in Spring Boot using Bolt db. <br />
+Implementations of Hoverfly proxy in Spring Boot using Bolt DB. <br />
 
 ## Install Hoverfly on MacOS
-brew install SpectoLabs/tap/hoverfly<br />
+
+**brew install SpectoLabs/tap/hoverfly** <br />
 More : http://hoverfly.readthedocs.io/en/latest/pages/introduction/downloadinstallation.html<br />
 
 ## Install Bolt DB
-go get github.com/boltdb/bolt/...<br />
+
+**go get github.com/boltdb/bolt/...** <br />
 More :  https://github.com/boltdb/boltd<br />
 
 ## Hoverfly commands
-hoverfly -ap 8880 -pp 8555 -listen-on-host 192.168.9.153 -db "boltdb" -db-path ~/sample.db<br />
+
+**hoverfly -ap 8880 -pp 8555 -listen-on-host 192.168.9.153 -db "boltdb" -db-path ~/sample.db** <br />
 
 INFO[2018-07-18T15:24:22+05:30] Default proxy port has been overwritten       port=8555<br />
 INFO[2018-07-18T15:24:22+05:30] Default admin port has been overwritten       port=8880<br />
@@ -23,6 +26,7 @@ INFO[2018-07-18T15:24:22+05:30] Admin interface is starting...                Ad
 INFO[2018-07-18T15:24:22+05:30] serving proxy <br />
 
 ## SpringBoot changes:
+
 RestTemplate restTemplate = new RestTemplate();<br />
 SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();<br />
 Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("192.168.9.153", 8555));<br />
