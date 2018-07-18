@@ -24,6 +24,7 @@ hoverctl start --upstream-proxy http://my-user:my-pass@corp.proxy:8080<br />
 hoverfly -ap 8880 -pp 8555<br />
 
 On your local machine, you can create a target named remote using hoverctl. This target will be configured to communicate with Hoverfly.<br />
+
 hoverctl targets create remote \
     --host hoverfly.example.com \
     --admin-port 8880 \
@@ -45,13 +46,14 @@ hoverctl logs
 
 **Why am I not able to access my Hoverfly remotely?**
 That’s because Hoverfly is bind to loopback interface by default, meaning that you can only access to it on localhost. To access it remotely, you can specify the IP address it listens on. For example, setting 0.0.0.0 to listen on all network interfaces.<br />
+
 hoverfly -listen-on-host 0.0.0.0 <br />
 
-**hoverfly -ap 8880 -pp 8555 -listen-on-host 192.168.9.153 -db "boltdb" -db-path ~/sample.db** <br />
+**hoverfly -ap 8880 -pp 8555 -listen-on-host XXX.XXX.XXX.XXX -db "boltdb" -db-path ~/sample.db** <br />
 
 INFO[2018-07-18T15:24:22+05:30] Default proxy port has been overwritten       port=8555<br />
 INFO[2018-07-18T15:24:22+05:30] Default admin port has been overwritten       port=8880<br />
-INFO[2018-07-18T15:24:22+05:30] Listen on specific interface                  host=192.168.9.153<br />
+INFO[2018-07-18T15:24:22+05:30] Listen on specific interface                  host=XXX.XXX.XXX.XXX<br />
 INFO[2018-07-18T15:24:22+05:30] Initiating database                           databaseName=/Users/bhawani.s.shekhawat/sample.db<br />
 INFO[2018-07-18T15:24:22+05:30] Using boltdb backend <br />                        
 INFO[2018-07-18T15:24:22+05:30] Proxy prepared...                             Destination=. Mode=simulate ProxyPort=8555<br />
@@ -63,7 +65,7 @@ INFO[2018-07-18T15:24:22+05:30] serving proxy <br />
 
 RestTemplate restTemplate = new RestTemplate();<br />
 SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();<br />
-Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("192.168.9.153", 8555));<br />
+Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("XXX.XXX.XXX.XXX", 8555));<br />
 requestFactory.setProxy(proxy);<br />
 restTemplate =  new RestTemplate(requestFactory);<br />
 Programme programme = restTemplate.getForObject("http://127.0.0.1:8091/programme/{id}", Programme.class, programId);<br />
