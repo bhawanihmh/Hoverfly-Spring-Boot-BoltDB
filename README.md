@@ -75,9 +75,6 @@ requestFactory.setProxy(proxy);<br />
 restTemplate =  new RestTemplate(requestFactory);<br />
 Programme programme = restTemplate.getForObject("http://127.0.0.1:8091/programme/{id}", Programme.class, programId);<br />
 
-## More about Hoverfly:<br />
-https://hoverfly.readthedocs.io/en/latest/pages/tutorials/advanced/advanced.html <br />
-
 ## Using middleware:<br />
 Hoverfly middleware can be written in any language. Middleware modules receive a service data JSON string via the standard input (STDIN) and must return a service data JSON string to the standard output (STDOUT).<br />
 To implement more dynamic behaviour, middleware should be combined with Hoverfly's synthesize mode (see the Creating synthetic services section).<br/>
@@ -105,3 +102,10 @@ Restart Hoverfly in simulate mode with the example.js script specified as middle
    ./hoverfly -middleware "./example.js"<br/>
 Repeat the steps you took to capture the traffic You will notice that every response will have the 201 status code,<br/> and the body will have been replaced by the string specified in the script.<br/>
 <br/>
+
+
+## More about Hoverfly:<br />
+https://hoverfly.readthedocs.io/en/latest/pages/tutorials/advanced/advanced.html <br />
+
+## hoverctl commands:<br />
+https://hoverfly.readthedocs.io/en/latest/pages/reference/hoverctl/hoverctlcommands.html#hoverctl-commands<br />
